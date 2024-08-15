@@ -28,7 +28,7 @@ public class SqlParserSample {
         // 创建解析器
         SqlParser parser = SqlParser.create("", mysqlConfig);
         // Sql语句
-        String sql = "select * from emps where id = 1";
+        String sql = "select count(1) from (SELECT STR_TO_DATE('2024-08-14', '%Y-%m-%d'),CURDATE()) t";
         // 解析sql
         SqlNode sqlNode = parser.parseQuery(sql);
         // 还原某个方言的SQL
